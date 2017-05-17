@@ -17,7 +17,7 @@ namespace CSharpEquality
                 new Food("pear", FoodGroup.Fruit),
                 new Food("apple", FoodGroup.Fruit)};
             
-            Array.Sort(list, new FoodNameComparer());
+            Array.Sort(list, FoodNameComparer.Instance);
 
             foreach (var item in list) Console.WriteLine(item);
         }

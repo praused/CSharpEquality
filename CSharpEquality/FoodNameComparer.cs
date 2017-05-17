@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharpEquality
 {
-    class FoodNameComparer : IComparer<Food>
+    class FoodNameComparer : Comparer<Food>
     {
-        public int Compare(Food x, Food y)
+        private static FoodNameComparer _instance = new FoodNameComparer();
+
+        public static FoodNameComparer Instance { get { return _instance; } }
+
+        private FoodNameComparer() { }
+
+        public override int Compare(Food x, Food y)
         {
             if (x == null && y == null) return 0;
             if (x == null) return -1;
