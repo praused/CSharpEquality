@@ -20,7 +20,7 @@ namespace CSharpEquality
             if (x == null) return -1;
             if (y == null) return 1;
             int nameOrder = string.Compare(x.Name, y.Name, StringComparison.CurrentCulture);
-            if (nameOrder <> 0) return nameOrder;
+            if (nameOrder != 0) return nameOrder;
             return string.Compare(x.Group.ToString(), y.Group.ToString(), StringComparison.CurrentCulture);
         }
     }
